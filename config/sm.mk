@@ -205,17 +205,22 @@ ifeq ($(strip $(HOST_OS)),linux)
     libmedia_jni \
     libstagefright_mp3dec \
     libart \
-    mdnsd \
-    libwebrtc_spl \
-    third_party_WebKit_Source_core_webcore_svg_gyp \
-    libjni_filtershow_filters \
-    libavformat \
-    libavcodec \
-    skia_skia_library_gyp \
-    libSR_Core \
+    libstagefright_amrwbenc \
+    libpdfium \
+    libpdfiumcore \
     libwebviewchromium \
-    third_party_libvpx_libvpx_gyp \
-    ui_gl_gl_gyp
+    libwebviewchromium_loader \
+    libwebviewchromium_plat_support \
+    libjni_filtershow_filters \
+    fio \
+    libavformat \
+    libavutil \
+    libswresample \
+    libavcodec \
+    libswscale \
+    libwebrtc_spl \
+    libncurses \
+    hwcomposer.msm8974
 
   ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
     OPT2 := (max)
