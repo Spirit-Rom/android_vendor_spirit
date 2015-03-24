@@ -222,28 +222,13 @@ ifeq ($(strip $(HOST_OS)),linux)
     libncurses \
     hwcomposer.msm8974
 
+  LOCAL_DISABLE_PTHREAD := \
+    libc_netbsd
+
   ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
     OPT2 := (max)
-
-    # Disable some modules that break with -O3
-    # Add more modules if needed for devices in BoardConfig.mk
-    # LOCAL_DISABLE_O3 +=
-    LOCAL_DISABLE_O3 := \
-      libaudioflinger \
-      libwebviewchromium \
-      skia_skia_library_gyp
-
-    LOCAL_DISABLE_PTHREAD := \
-      libc_netbsd
-
-    # -O3 flags and friends
-    O3_FLAGS := \
-      -O3 \
-      -Wno-error=array-bounds \
-      -Wno-error=strict-overflow
   else
     OPT2:=
-
   endif
 
   ifeq ($(strip $(ENABLE_PTHREAD)),true)
